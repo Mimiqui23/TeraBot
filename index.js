@@ -208,6 +208,8 @@ function play(connection, message) {
           .addField("ID ", `${client.user.id}`)
           .addField("Nombre de membres", message.guild.members.size)
           .addField("Nombre de catégories et de salons", message.guild.channels.size)
+          .addField("Date de création du bot :" , "01/11/2018")
+          .addField("Bot crée par :" , "Antoine2lop avec l'aide de Zips Tuto/Gaming pour l'hébergement ")
           .setFooter("© 2018 TeraCube")
           message.channel.sendMessage(info_embed)
           console.log("Un utilisateur a effectué la commande d'info !")
