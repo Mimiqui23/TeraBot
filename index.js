@@ -31,7 +31,7 @@ function play(connection, message) {
   client.on("ready", () => {
   
       console.log("Je suis prêt !");
-      client.user.setActivity("Dernier jour remboursement chatiment");
+      client.user.setActivity("Bonne Rentrée :)");
   
   });
   
