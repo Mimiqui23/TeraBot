@@ -55,13 +55,6 @@ function play(connection, message) {
         message.channel.send(aide_embed);
       }
     
-      if (command === "asl") {
-          let age = args[0]; // Remember arrays are 0-based!.
-          let sex = args[1];
-          let location = args[2];
-          message.reply(`Hello ${message.author.username}, I see you're a ${age} year old ${sex} from ${location}. Wanna date?`);
-      }
-    
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
       
