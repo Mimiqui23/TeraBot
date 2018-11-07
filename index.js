@@ -54,7 +54,24 @@ function play(connection, message) {
         .setTimestamp()
         message.channel.send(aide_embed);
       }
-    
+      
+      if(objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix+"say " + message))
+      {
+      StringBuilder message = new StringBuilder();
+      for(int i = 1; i < command.length; i++) {
+           if(i == command.length-1) {
+               message.append(command[i]);
+           }else {
+               message.append(command[i] + " ");
+            }
+       }
+
+      objMsgCh.sendMessage(message.toString()).queue();
+      
+      objMsg.delete();
+      return;
+      }
+      
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
       
