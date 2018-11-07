@@ -54,7 +54,12 @@ function play(connection, message) {
         .setTimestamp()
         message.channel.send(aide_embed);
       }
-
+    
+      if (message.content.startsWith(prefix + 'ping')) {
+          message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
+      
+      }
+      
       if(message.content === "*ip"){
         message.reply("IP teracube.mcpe.eu Port 19144");
         console.log('Le bot donne l ip ');
@@ -89,6 +94,7 @@ function play(connection, message) {
         .setThumbnail(message.author.avatarURL)
         .addField("Bonjour", "Le bot répond !")
         .addField("*stats", "Le bot vous envoie des informations sur votre profil !")
+        .addField("g!ping", "Vous donne votre ping ")
         .addField("*info", "Donne des informations sur le bot et le serveur !")
         .addField("*contact", "Donne des informations sur le contact !")
         .addField("*ip","Donne l'ip du serveur")
