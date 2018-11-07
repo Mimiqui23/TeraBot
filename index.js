@@ -31,7 +31,7 @@ function play(connection, message) {
   client.on("ready", () => {
   
       console.log("Je suis prêt !");
-      client.user.setActivity("Bonne Rentrée a Tous :)");
+      client.user.setActivity("I love lefavrouge :)");
   
   });
   
