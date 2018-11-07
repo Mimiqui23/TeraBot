@@ -54,22 +54,11 @@ function play(connection, message) {
         .setTimestamp()
         message.channel.send(aide_embed);
       }
-      
-      if(objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix+"say " + message))
-      {
-      StringBuilder message = new StringBuilder();
-      for(int i = 1; i < command.length; i++) {
-           if(i == command.length-1) {
-               message.append(command[i]);
-           }else {
-               message.append(command[i] + " ");
-            }
-       }
-
-      objMsgCh.sendMessage(message.toString()).queue();
-      
-      objMsg.delete();
-      return;
+         public void onMessageReceived(MessageReceivedEvent event){
+      if(event.getMessage().getContentRaw().startsWith("!!say")){
+        event.getChannel().sendMessage(event.getMessage().getContentRaw().substring(6)).queue();
+        event.getMessage().delete().queue();
+         }
       }
       
       if (message.content.startsWith(prefix + 'ping')) {
