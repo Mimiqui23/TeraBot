@@ -54,12 +54,8 @@ function play(connection, message) {
         .setTimestamp()
         message.channel.send(aide_embed);
       }
-         public void onMessageReceived(MessageReceivedEvent event){
-      if(event.getMessage().getContentRaw().startsWith("!!say")){
-        event.getChannel().sendMessage(event.getMessage().getContentRaw().substring(6)).queue();
-        event.getMessage().delete().queue();
-         }
-      }
+   
+
       
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
