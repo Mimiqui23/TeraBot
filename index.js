@@ -54,16 +54,6 @@ function play(connection, message) {
         .setTimestamp()
         message.channel.send(aide_embed);
       }
-    
-      if (message.content.startsWith(prefix + 'say')) {
-       Var text = message.content.split(' ').slice(1).join(' ')
-       if(!text) return message.reply('précise un message a say')
-       message.channel.send(text)
-      }
-
-      })
-   
-
       
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
