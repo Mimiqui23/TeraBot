@@ -57,11 +57,11 @@ function play(connection, message) {
     
       if (message.content.startsWith(prefix + 'say')) {
        Var text = message.content.split(' ').slice(1).join(' ')
-      if(!text) return message.reply('précise un message a say')
+       if(!text) return message.reply('précise un message a say')
        message.channel.send{text}
       }
 
-      }}
+      })
    
 
       
