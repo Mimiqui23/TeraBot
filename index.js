@@ -55,6 +55,15 @@ function play(connection, message) {
         message.channel.send(aide_embed);
       }
       
+      if(message.content.startsWith(prefix + "say")){
+      
+             message.delete(message.author);
+      
+          var text = message.content.split(' ').slice(1).join(' ')
+          if(!text) return message.reply('Hey salut')
+          message.channel.send(text)
+      }
+      
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
       
