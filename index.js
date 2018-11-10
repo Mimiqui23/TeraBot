@@ -39,7 +39,7 @@ function play(connection, message) {
   
       if(message.content === "Bonjour"){
           message.reply("Bonjour :smile: !");
-          console.log('Le bot dit bonjour a {message.author} ');
+          console.log('Le bot dit bonjour ');
       }
   
       if(message.content === prefix + "help") {
@@ -112,18 +112,7 @@ function play(connection, message) {
         .setTimestamp()
         message.channel.send(fun_embed);
       }
-
-      if(message.content === prefix + "annonce") {
-        var fun_embed = new Discord.RichEmbed()
-        .setColor('#FFD700')
-        .setTitle(`Bonjour je suis le TeraBot J'arrive prochainement .`)
-        .setThumbnail(message.author.avatarURL)
-        .addField("J'arrive avec plein de commande amusente pour vous jouer des mauvais tour :smile: !", "N'oublier jamais sans vous TeraCube n'existerais pas !")
-        .addField("-=@everyone=-" ,":kissing_closed_eyes:" )
-        .setFooter("© 2018 TeraCube")
-        .setTimestamp()
-        message.channel.send(fun_embed);
-      }
+    
   
       if (!message.content.startsWith(prefix)) return;
   
