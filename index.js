@@ -39,7 +39,7 @@ function play(connection, message) {
   
       if(message.content === "Bonjour"){
           message.reply("Bonjour :smile: !");
-          console.log('Le bot dit bonjour');
+          console.log('Le bot dit bonjour a {message.author} ');
       }
   
       if(message.content === prefix + "help") {
