@@ -122,7 +122,7 @@ function play(connection, message) {
         .addField("lucas monvoisin", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UCd0i3x8wPntXdgzhkhI-cvg)`, true)
         .addField("Minecraft gamers yt", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UCt_uvQDYAWI7UlV3XhxZxlw)`, true)
         .addField("PoteDuMaroc", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UCD0kCEtbUmzQTOgoCeKGseA)`, true)
-        .addField("MoussaLeTche", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UC0X6bhDkQedB_rgxtgnwvug)`, true)
+        .addField("🐺MoussaLeTche🐺", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UC0X6bhDkQedB_rgxtgnwvug)`, true)
         .setThumbnail(message.author.avatarURL)
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
