@@ -103,11 +103,27 @@ function play(connection, message) {
         .setThumbnail(message.author.avatarURL)
         .addField("Bonjour", "Le bot répond !")
         .addField("*stats", "Le bot vous envoie des informations sur votre profil !")
+        .addField("*youtuber", "Donne la liste des youtuber du serveur ! ")
         .addField("*ping", "Vous donne votre ping ")
         .addField("*info", "Donne des informations sur le bot et le serveur !")
         .addField("*contact", "Donne des informations sur le contact !")
         .addField("*ip","Donne l'ip du serveur")
         .addField("*vote","Donne le lien de vote du serveur")
+        .setFooter("© 2018 TeraCube")
+        .setTimestamp()
+        message.channel.send(fun_embed);
+      }
+      
+       if(message.content === prefix + "youtuber") {
+        var fun_embed = new Discord.RichEmbed()
+        .setColor('#ff0000')
+        .setTitle(`Voici mes commandes amusantes !`)
+        .addField("🐢🐇LPBčøûćhDz69ŸT🐇🐢", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UCnxRq_ZcU76hFfSf6zoaWSA)`, true)
+        .addField("lucas monvoisin", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UCd0i3x8wPntXdgzhkhI-cvg)`, true)
+        .addField("Minecraft gamers yt", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UCt_uvQDYAWI7UlV3XhxZxlw)`, true)
+        .addField("PoteDuMaroc", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UCD0kCEtbUmzQTOgoCeKGseA)`, true)
+        .addField("MoussaLeTche", `[ici pour voir sa chaine YouTube](https://www.youtube.com/channel/UC0X6bhDkQedB_rgxtgnwvug)`, true)
+        .setThumbnail(message.author.avatarURL)
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(fun_embed);
