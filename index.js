@@ -39,7 +39,7 @@ function play(connection, message) {
   
       if(message.content === "Bonjour"){
           message.reply("Bonjour :smile: !");
-          console.log('Le bot dit bonjour ');
+          console.log(`L'utilisateur ${message.author.username} a éxécuter la commande Bonjour !`);
       }
   
       if(message.content === prefix + "help") {
@@ -53,6 +53,7 @@ function play(connection, message) {
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(aide_embed);
+        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *help !`);
       }
       
       if(message.content.startsWith(prefix + "say")){
@@ -62,16 +63,18 @@ function play(connection, message) {
           var text = message.content.split(' ').slice(1).join(' ')
           if(!text) return message.reply('Hey salut')
           message.channel.send(text)
+          console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *say !`);
       }
       
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
+          console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *ping !`);
       
       }
       
       if(message.content === "*ip"){
         message.reply("IP teracube.mcpe.eu Port 19144");
-        console.log('Le bot donne l ip ');
+        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *ip !`);
       }
       if(message.content === "*contact"){
         message.reply("Pour nous contacter envoie un mail a l'adresse contact@teracube.hmsw.fr ");
@@ -80,7 +83,7 @@ function play(connection, message) {
 
       if(message.content === "*vote"){
         message.reply("Vas voter a l'adresse https://minecraftpocket-servers.com/server/67382/vote/ puis fait /vote dans le jeux pour gagné des cadeaux !");
-        console.log('Le bot donne le lien de vote ');
+        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *vote !`);
       }
 
       if(message.content === prefix + "mod") {
@@ -94,6 +97,7 @@ function play(connection, message) {
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(mod_embed);
+        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *mod !`);
       }
    
       if(message.content === prefix + "fun") {
@@ -112,6 +116,7 @@ function play(connection, message) {
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(fun_embed);
+        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *fun !`);
       }
       
        if(message.content === prefix + "youtuber") {
@@ -127,6 +132,7 @@ function play(connection, message) {
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(fun_embed);
+        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *youtuber !`);
       }
     
   
@@ -232,7 +238,7 @@ function play(connection, message) {
           .addField("Bot crée par :" , "Antoine2lop avec l'aide de Zips Tuto/Gaming pour l'hébergement ")
           .setFooter("© 2018 TeraCube")
           message.channel.sendMessage(info_embed)
-          console.log("Un utilisateur a effectué la commande d'info !")
+          console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *info !`);
       }
   
       if(message.content.startsWith(prefix + "clear")) {
@@ -262,33 +268,6 @@ function play(connection, message) {
           message.channel.overwritePermissions(mute, { SEND_MESSAGES: false}).then(member => {
               message.channel.send(`${mute.user.username} est mute !`);
           });
-      }
-
-      if (message.content.startsWith(prefix + "report")) {
-        message.delete(message.author);
-        let argson = message.content.split(" ").splice(1);
-      
-      let target = message.mentions.users.first()
-      let reason = argson.slice(1).join(' ');
-      let reports = message.guild.channels.find('name', "report");
-      
-      if (!target) return message.reply('Merci de te mentionner');
-      if (!reason) return message.reply('Quelle est la reason');
-      if (!reports) return message.reply(`Merci de créer le channel logreport pour les logs`);
-      
-      let rembed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .addField('Membre Report', `${target.username} ID: ${target.id}`)
-      .addField('Report Par', `${message.author.username} ID:${message.author.id}`)
-      .addField('Heure du Report', message.createdAt)
-      .addField('Report', message.channel)
-      .addField('Raison du Report', reason)
-         .setFooter("TeraCube - 2018", bot.user.displayAvatarURL)
-      .setTimestamp()
-      message.channel.send(`${target.tag} reporté par ${message.author} pour {reason}`).then(msg => msg.delete(2000));
-      
-      reports.sendEmbed(rembed); 
-
       }
 
   
