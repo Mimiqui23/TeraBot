@@ -31,7 +31,7 @@ function play(connection, message) {
   client.on("ready", () => {
   
       console.log("Je suis prêt !");
-      client.user.setActivity('YouTube', { type: 'WATCHING' });
+      client.user.setActivity('MgaYT', { type: 'WATCHING' });
   
   });
   
