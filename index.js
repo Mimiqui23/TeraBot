@@ -75,7 +75,7 @@ function play(connection, message) {
       }
       if(message.content === "*contact"){
         message.reply("Pour nous contacter envoie un mail a l'adresse contact@teracube.hmsw.fr ");
-        console.log(`L'utilisateur ${client.user.username} a éxécuter la commande *contact !`);
+        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *contact !`);
       }
 
       if(message.content === "*vote"){
