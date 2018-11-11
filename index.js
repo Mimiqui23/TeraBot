@@ -263,6 +263,34 @@ function play(connection, message) {
               message.channel.send(`${mute.user.username} est mute !`);
           });
       }
+
+      if (message.content.startsWith(prefix + "report")) {
+        message.delete(message.author);
+        let argson = message.content.split(" ").splice(1);
+      
+      let target = message.mentions.users.first()
+      let reason = argson.slice(1).join(' ');
+      let reports = message.guild.channels.find('name', "report");
+      
+      if (!target) return message.reply('Merci de te mentionner');
+      if (!reason) return message.reply('Quelle est la reason');
+      if (!reports) return message.reply(`Merci de créer le channel logreport pour les logs`);
+      
+      let rembed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .addField('Membre Report', `${target.username} ID: ${target.id}`)
+      .addField('Report Par', `${message.author.username} ID:${message.author.id}`)
+      .addField('Heure du Report', message.createdAt)
+      .addField('Report', message.channel)
+      .addField('Raison du Report', reason)
+         .setFooter("TeraCube - 2018", bot.user.displayAvatarURL)
+      .setTimestamp()
+      message.channel.send(`${target.tag} reporté par ${message.author} pour {reason}`).then(msg => msg.delete(2000));
+      
+      reports.sendEmbed(rembed); 
+
+      }
+
   
       if(message.content.startsWith(prefix + "unmute")) {
           if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission !");
