@@ -31,7 +31,7 @@ function play(connection, message) {
   client.on("ready", () => {
   
       console.log("Je suis prêt !");
-      client.user.setActivity('MgaYT', { type: 'ESPIONNE' });
+      client.user.setActivity('Espionner MgaYT');
   
   });
   
@@ -39,7 +39,7 @@ function play(connection, message) {
   
       if(message.content === "Bonjour"){
           message.reply("Bonjour :smile: !");
-          console.log(`L'utilisateur ${message.author.tag} a éxécuter la commande Bonjour !`);
+          console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande Bonjour !`);
       }
   
       if(message.content === prefix + "help") {
