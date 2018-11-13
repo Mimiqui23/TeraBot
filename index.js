@@ -53,7 +53,7 @@ function play(connection, message) {
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(aide_embed);
-        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *help !`);
+        console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *help Sont id : ${message.author.id} !`);
       }
       
       if(message.content.startsWith(prefix + "say")){
@@ -63,27 +63,27 @@ function play(connection, message) {
           var text = message.content.split(' ').slice(1).join(' ')
           if(!text) return message.reply('Hey salut')
           message.channel.send(text)
-          console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *say !`);
+          console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *say Sont id : ${message.author.id} !`);
       }
       
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
-          console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *ping !`);
+          console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *ping Sont id : ${message.author.id} !`);
       
       }
       
       if(message.content === "*ip"){
         message.reply("IP teracube.mcpe.eu Port 19144");
-        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *ip !`);
+        console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *ip Sont id : ${message.author.id} !`);
       }
       if(message.content === "*contact"){
         message.reply("Pour nous contacter envoie un mail a l'adresse contact@teracube.hmsw.fr ");
-        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *contact !`);
+         console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *contact Sont id : ${message.author.id} !`);
       }
 
       if(message.content === "*vote"){
         message.reply("Vas voter a l'adresse https://minecraftpocket-servers.com/server/67382/vote/ puis fait /vote dans le jeux pour gagné des cadeaux !");
-        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *vote !`);
+         console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *vote Sont id : ${message.author.id} !`);
       }
 
       if(message.content === prefix + "mod") {
@@ -97,7 +97,7 @@ function play(connection, message) {
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(mod_embed);
-        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *mod !`);
+         console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *mod Sont id : ${message.author.id} !`);
       }
    
       if(message.content === prefix + "fun") {
@@ -116,7 +116,7 @@ function play(connection, message) {
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(fun_embed);
-        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *fun !`);
+        console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *fun Sont id : ${message.author.id} !`);
       }
       
        if(message.content === prefix + "youtuber") {
@@ -132,7 +132,7 @@ function play(connection, message) {
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(fun_embed);
-        console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *youtuber !`);
+        console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *youtuber Sont id : ${message.author.id} !`);
       }
     
   
@@ -238,7 +238,7 @@ function play(connection, message) {
           .addField("Bot crée par :" , "Antoine2lop avec l'aide de Zips Tuto/Gaming pour l'hébergement ")
           .setFooter("© 2018 TeraCube")
           message.channel.sendMessage(info_embed)
-          console.log(`L'utilisateur ${message.author.username} a éxécuter la commande *info !`);
+          console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *info Sont id : ${message.author.id} !`);
       }
   
       if(message.content.startsWith(prefix + "clear")) {
