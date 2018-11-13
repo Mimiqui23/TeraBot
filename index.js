@@ -39,7 +39,7 @@ function play(connection, message) {
   
       if(message.content === "Bonjour"){
           message.reply("Bonjour :smile: !");
-          console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande Bonjour !`);
+          console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande Bonjour Sont id : ${message.author.id} !`);
       }
   
       if(message.content === prefix + "help") {
