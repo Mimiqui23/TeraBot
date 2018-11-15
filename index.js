@@ -80,7 +80,72 @@ function play(connection, message) {
         message.reply("Pour nous contacter envoie un mail a l'adresse contact@teracube.hmsw.fr ");
          console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *contact Sont id : ${message.author.id} !`);
       }
+      
+      if (message.content.startsWith(prefix + "note")) {
+	
+	        message.delete(message.author);
+	
+	        let args = message.content.split(" ").slice(1);
+	        let tte = args.join(" ")
+	        if (!tte){
+		          return message.reply("Merci de me poser une question")};
+		          
+		          var replys = [
+		          "0/20",
+		          "0.5/20",
+		          "1/20",
+              "1.5/20",
+              "2/20",
+              "2.5/20",
+              "3/20",
+              "3.5/20",
+              "4/20",
+              "4.5/20",
+              "5/20",
+              "5.5/20",
+              "6/20",
+              "6.5/20",
+              "7/20",
+              "7.5/20",
+              "8/20",
+              "8.5/20",
+              "9/20",
+              "9.5/20",
+              "10/20",
+              "10.5/20",
+              "11/20",
+              "11.5/20",
+              "12/20",
+              "12.5/20",
+              "13/20",
+              "13.5/20",
+              "14/20",
+              "14.5/20",
+              "15/20",
+              "15.5/20",
+              "16/20",
+              "16.5/20",
+              "17/20",
+              "17.5/20",
+              "18/20",
+              "18.5/20",
+              "19/20",
+              "19.5/20",
+              "20/20"
+              ,
+		          ];
+	            
+	        let reponse = (replys[Math.floor(Math.random() * replys.length)])
+	        
+	        var bembed = new Discord.RichEmbed()
+	        .setDescription("Prédiction de tes note !!")
+	        .addField("Question", tte)
+	        .addField("Réponse", reponse)
+	        .setColor("RANDOM")
+      message.channel.sendEmbed(bembed)
 
+      }
+      
       if(message.content === "*vote"){
         message.reply("Vas voter a l'adresse https://minecraftpocket-servers.com/server/67382/vote/ puis fait /vote dans le jeux pour gagné des cadeaux !");
          console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *vote Sont id : ${message.author.id} !`);
