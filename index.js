@@ -178,6 +178,7 @@ function play(connection, message) {
         .addField("*contact", "Donne des informations sur le contact !")
         .addField("*ip","Donne l'ip du serveur")
         .addField("*vote","Donne le lien de vote du serveur")
+	.addField("*note Note du prochain dm", "Envois une prédiction de la note de ta prochaine évaluation !")
         .setFooter("© 2018 TeraCube")
         .setTimestamp()
         message.channel.send(fun_embed);
