@@ -200,96 +200,6 @@ function play(connection, message) {
         message.channel.send(fun_embed);
         console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *youtuber Sont id : ${message.author.id} !`);
       }
-    
-  
-      if (!message.content.startsWith(prefix)) return;
-  
-      var args = message.content.substring(prefix.length).split(" ");
-  
-      switch (args[0].toLowerCase()) { 
-  
-          case "stats":
-  
-          var userCreateDate = message.author.createdAt.toString().split(" ");
-          var msgauthor = message.author.id;
-  
-          var stats_embed = new Discord.RichEmbed()
-          .setColor("#FFD700")
-          .setTitle(`Statistiques du joueurs : ${message.author.username}`)
-          .addField(`ID du joueurs `, msgauthor, true)
-          .addField(`Date d'inscription du joueur :`, userCreateDate[1] + ' ' + userCreateDate[2] + ' ' + userCreateDate[3])
-          .setThumbnail(message.author.avatarURL)
-          message.reply("Tu peux regarder tes messages privés !")
-          message.author.send(stats_embed);
-  
-          break;
-          
-    case "play":
-  
-      if (!args[1]) {
-  
-      message.channel.sendMessage("Tu dois m’indiquer un lien YouTube"); 
-  
-      return;
-  
-    }
-  
-      if(!message.member.voiceChannel) {
-  
-      message.channel.sendMessage(":x: Tu dois être dans un salon vocal"); 
-  
-      return;
-  
-    }
-  
-  
-      if(!servers[message.guild.id]) servers[message.guild.id] = {
-  
-      queue: []
-  
-    };
-  
-  
-    var server = servers[message.guild.id];
-  
-  
-    server.queue.push(args[1]);
-  
-    if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-  
-    play(connection, message) 
-  
-    });
-  
-    break; 
-  
-    case "skip":
-  
-      if(!message.member.voiceChannel) {
-  
-      message.channel.sendMessage(":x: Tu dois être dans un salon vocal"); 
-  
-      return;
-  
-    }
-  
-      var server = servers[message.guild.id];
-  
-      if(server.dispatcher) server.dispatcher.end();
-  
-      break;
-  
-      case "stop":
-  
-      if(!message.member.voiceChannel) 
-      
-      return message.channel.send(":x: Tu dois être dans un salon vocal");
-  
-      message.member.voiceChannel.leave();
-  
-      break;
-    
-    }
   
       if(message.content === prefix + "info") {
           var info_embed = new Discord.RichEmbed()
@@ -305,6 +215,28 @@ function play(connection, message) {
           .setFooter("© 2018 TeraCube")
           message.channel.sendMessage(info_embed)
           console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *info Sont id : ${message.author.id} !`);
+      }
+      
+      if(message.content === prefix + "p") {
+        var mod_embed = new Discord.RichEmbed()
+        .setColor('#808000')
+        .setThumbnail(message.author.avatarURL)
+        .addField("Prise de service de ", `${message.member.user.tag}`)
+        .setFooter(" ")
+        .setTimestamp()
+        message.channel.send(mod_embed);
+         console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *p Sont id : ${message.author.id} !`);
+      }
+
+      if(message.content === prefix + "f") {
+        var mod_embed = new Discord.RichEmbed()
+        .setColor('#FF0000')
+        .setThumbnail(message.author.avatarURL)
+        .addField("Fin de service de    ", `${message.member.user.tag}`)
+        .setFooter(" ")
+        .setTimestamp()
+        message.channel.send(mod_embed);
+         console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *f Sont id : ${message.author.id} !`);
       }
   
       if(message.content.startsWith(prefix + "clear")) {
