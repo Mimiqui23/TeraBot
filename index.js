@@ -218,6 +218,7 @@ function play(connection, message) {
       }
       
       if(message.content === prefix + "p") {
+	message.delete(message.author)
         var mod_embed = new Discord.RichEmbed()
         .setColor('#808000')
         .setThumbnail(message.author.avatarURL)
@@ -229,6 +230,7 @@ function play(connection, message) {
       }
 
       if(message.content === prefix + "f") {
+	message.delete(message.author)
         var mod_embed = new Discord.RichEmbed()
         .setColor('#FF0000')
         .setThumbnail(message.author.avatarURL)
