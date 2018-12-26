@@ -31,7 +31,7 @@ function play(connection, message) {
   client.on("ready", () => {
   
       console.log("Je suis prêt !");
-      client.user.setActivity('#SaveYourInternet');
+      
   
   });
   
@@ -65,6 +65,28 @@ function play(connection, message) {
           message.channel.send(text)
           console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *say Sont id : ${message.author.id} !`);
       }
+	  
+      bot.on('ready', () => {
+
+    console.log('Je suis prêt !');
+
+    setInterval(changing_status, 1000);
+
+  
+
+    function changing_status() {
+
+      let status = ["「👮」Protège "+bot.guilds.size+"s. Anti-Raid ®『🚫』 ", "/help /invite", "Crée par _ClesiriusPE _「🎄」", "Joyeux Noël「🎄」", "「🎄」On est le 26Déc", "「👮」Bot H24 Online", "#Go90servs", "「💪」On compte sur vous", "「👮」Protéction Actif.", "「💪」13Commandes", "「👮」#SaveYourInternet"]
+
+      let random = status[Math.floor(Math.random() * status.length)]
+
+      bot.user.setActivity(random)
+
+      }
+
+  
+
+      });
       
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
