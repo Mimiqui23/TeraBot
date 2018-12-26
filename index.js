@@ -70,7 +70,7 @@ function play(connection, message) {
 
     console.log('Je suis prêt !');
 
-    setInterval(changing_status, 1000);
+    setInterval(changing_status, 3000);
 
   
 
