@@ -66,7 +66,7 @@ function play(connection, message) {
           console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *say Sont id : ${message.author.id} !`);
       }
 	  
-      bot.on('ready', () => {
+      client.on('ready', () => {
 
     console.log('Je suis prêt !');
 
