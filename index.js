@@ -56,7 +56,7 @@ function play(connection, message) {
         console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *help Sont id : ${message.author.id} !`);
       }
       
-      if(message.content.startsWith(prefix + "say")){
+      if(message.content.startsWith(prefix + "dire")){
       
              message.delete(message.author);
       
