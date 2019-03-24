@@ -65,34 +65,6 @@ function play(connection, message) {
           message.channel.send(text)
           console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *say Sont id : ${message.author.id} !`);
       }
-
-      if(message.content.startsWith(prefix + "kick") {
-        // This command must be limited to mods and admins. In this example we just hardcode the role names.
-        // Please read on Array.some() to understand this bit: 
-        // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-        if(!message.member.roles.some(r=>["Modérateur","Super-modérateur","Administrateur","Fondateur"].includes(r.name)) )
-          return message.reply("Désolé, vous n'avez pas les autorisations pour utiliser ceci!");
-        
-        // Let's first check if we have a member and if we can kick them!
-        // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
-        // We can also support getting the member by ID, which would be args[0]
-        let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-        if(!member)
-          return message.reply("Merci de mentionner un membre valide de ce serveur!");
-        if(!member.kickable) 
-          return message.reply("Je ne peux pas kick cet utilisateur! A-ils un rôle plus élevé? Ai-je des autorisations du coup?");
-        
-        // slice(1) removes the first part, which here should be the user mention or ID
-        // join(' ') takes all the various parts to make it a single string.
-        let reason = args.slice(1).join(' ');
-        if(!reason) reason = "Aucune raison donné";
-        
-        // Now, time for a swift kick in the nuts!
-        await member.kick(reason)
-          .catch(error => message.reply(`Désolé ${message.author} Il n'a pas pu étre kick car il y a eue une erreur : ${error}`));
-        message.reply(`${member.user.tag} a été kick par ${message.author.tag} raison: ${reason}`);
-    
-      }
       
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
