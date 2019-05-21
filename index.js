@@ -150,6 +150,31 @@ function play(connection, message) {
         message.reply("Vas voter a l'adresse https://minecraftpocket-servers.com/server/67382/vote/ puis fait /vote dans le jeux pour gagné des cadeaux !");
          console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *vote Sont id : ${message.author.id} !`);
       }
+	  client.on('message', message => {
+
+  if (message.content.startsWith(prefix + "play")) { 
+    if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission !");
+    let voiceChannel = message.guild.channels
+      .filter(function (channel) { return channel.type === 'voice' })
+      .first()
+    let args = message.content.split(' ')
+    voiceChannel
+      .join()
+      .then(function (connection)
+        let stream = YoutubeStream(args[1])
+        stream.on('error', function () {
+          message.reply("Je n'ai pas réussi à lire cette vidéo :(")
+          connection.disconnect()
+        })
+        connection
+          .playStream(stream)
+          .on('end', function () {
+            connection.disconnect()
+          })
+      })
+  }
+
+})
 
       if(message.content === prefix + "mod") {
         var mod_embed = new Discord.RichEmbed()
