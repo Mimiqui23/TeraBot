@@ -55,12 +55,13 @@ function play(connection, message) {
         message.channel.send(aide_embed);
         console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *help Sont id : ${message.author.id} !`);
       }
-
-      client.on('ready', () => {
-      setTimeout(function(){
-      sendMessage();
+      
+      process.on('warning', e => console.warn(e.stack));
+       client.on('ready', () => {
+      setTimeout(function(){ // in leftToEight() milliseconds run this:
+      sendMessage(); // send the message once
       var dayMillseconds = 1000 * 60 * 60 * 24;
-      setInterval(function(){
+      setInterval(function(){ // repeat this every 24 hours
             sendMessage();
            }, dayMillseconds)
          }, leftToEight())
