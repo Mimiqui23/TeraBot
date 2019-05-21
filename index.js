@@ -55,6 +55,29 @@ function play(connection, message) {
         message.channel.send(aide_embed);
         console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *help Sont id : ${message.author.id} !`);
       }
+
+      client.on('ready', () => {
+      setTimeout(function(){ // in leftToEight() milliseconds run this:
+      sendMessage(); // send the message once
+      var dayMillseconds = 1000 * 60 * 60 * 24;
+      setInterval(function(){ // repeat this every 24 hours
+            sendMessage();
+           }, dayMillseconds)
+         }, leftToEight())
+      })
+
+      function leftToEight(){
+      var d = new Date();
+      return (-d + d.setHours(1,0,0,0));
+      }
+
+      function sendMessage(){
+      var guild = client.guilds.get('353181306131316736');
+      if(guild && guild.channels.get('580478516433256458')){
+        guild.channels.get('580478516433256458').send("n'oublie pas de voter");
+        }
+
+      }
       
       if(message.content.startsWith(prefix + "dire")){
       
