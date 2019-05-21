@@ -153,7 +153,6 @@ function play(connection, message) {
 	  client.on('message', message => {
 
   if (message.content.startsWith(prefix + "play")) { 
-    if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission !");
     let voiceChannel = message.guild.channels
       .filter(function (channel) { return channel.type === 'voice' })
       .first()
