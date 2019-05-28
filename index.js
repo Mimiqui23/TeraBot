@@ -69,7 +69,7 @@ function play(connection, message) {
       client.on('message', function() {
       if (message.content === "$loop") { 
       var interval = setInterval (function () {
-        client.sendMessage(message.channel, "123")
+        client.send(message.channel, "123")
             }, 1 * 1000); 
           }
        });
