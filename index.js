@@ -66,6 +66,14 @@ function play(connection, message) {
           console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *say Sont id : ${message.author.id} !`);
       }
       
+      client.on('message', function() {
+      if (message.content === "$loop") { 
+      var interval = setInterval (function () {
+        bot.sendMessage(message.channel, "123")
+            }, 1 * 1000); 
+          }
+       });
+      
       if (message.content.startsWith(prefix + 'ping')) {
           message.channel.sendMessage('Pong :smile: ! Ton ping est de `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
           console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *ping Sont id : ${message.author.id} !`);
