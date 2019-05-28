@@ -41,21 +41,6 @@ function play(connection, message) {
           message.reply("Bonjour :smile: !");
           console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande Bonjour Sont id : ${message.author.id} !`);
       }
-      setInterval(function(){
-      var date = new Date();
-      var jour = date.getDay();
-      var heure = date.getHours();
-      var minutes = date.getMinutes();
-      console.log('Biiip')
-      if(heure === 20) {
-      if(minutes === 45)
-      client.channels.get("580478516433256458").send({embed: {
-             color: 3066993,
-             title: 'Example 1',
-             description: 'une desc' });
-                }
-             }
-       }, 60000);
   
       if(message.content === prefix + "help") {
         var aide_embed = new Discord.RichEmbed()
