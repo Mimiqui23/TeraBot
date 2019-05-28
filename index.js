@@ -47,16 +47,16 @@ function play(connection, message) {
       var heure = date.getHours();
       var minutes = date.getMinutes();
       console.log('Biiip')
-      if(jour === 4) {
-       if(heure === 20) {
-        if(minutes === 30)
-          client.channels.get("580478516433256458").send({embed: {
+      if(jour === 1) {
+      if(heure === 20) {
+      if(minutes === 36)
+      client.channels.get("580478516433256458").send({embed: {
              color: 3066993,
              title: 'Example 1',
              description: 'une desc' }});
-        }
-    }
-}, 60000);
+                }
+             }
+       }, 60000);
   
       if(message.content === prefix + "help") {
         var aide_embed = new Discord.RichEmbed()
