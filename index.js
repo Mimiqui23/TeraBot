@@ -47,9 +47,9 @@ function play(connection, message) {
       var heure = date.getHours();
       var minutes = date.getMinutes();
       console.log('Biiip')
-      if(jour === 1) {
+      if(jour === 0) {
       if(heure === 20) {
-      if(minutes === 36)
+      if(minutes === 41)
       client.channels.get("580478516433256458").send({embed: {
              color: 3066993,
              title: 'Example 1',
