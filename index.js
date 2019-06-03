@@ -65,6 +65,30 @@ function play(connection, message) {
           message.channel.send(text)
           console.log(`L'utilisateur ${message.member.user.tag} a éxécuter la commande *say Sont id : ${message.author.id} !`);
       }
+	  
+	  
+      client.on('ready', () => {
+      setTimeout(function(){ 
+      sendMessage(); 
+      var dayMillseconds = 1000 * 60 * 60 * 24;
+      setInterval(function(){ 
+            sendMessage();
+           }, dayMillseconds)
+         }, leftToEight())
+      })
+
+      function leftToEight(){
+      var d = new Date();
+      return (-d + d.setHours(1,0,0,0));
+      }
+
+      function sendMessage(){
+      var guild = client.guilds.get('353181306131316736');
+      if(guild = guild.channels.get('585173954470215712')){
+        guild.channels.get('585173954470215712').send("Hey, <@&554292977237753866> Il est l'heure de voter http://vote.teracube.eu/ aux 1000 votes on donne la date de la v5 ");
+        }
+
+      }
       
       
       if (message.content.startsWith(prefix + 'ping')) {
