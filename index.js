@@ -70,7 +70,7 @@ function play(connection, message) {
       client.on('ready', () => {
       setTimeout(function(){ 
       sendMessage(); 
-      var dayMillseconds = 1000 * 60 * 60 * 24;
+      var dayMillseconds = 60000;
       setInterval(function(){ 
             sendMessage();
            }, dayMillseconds)
