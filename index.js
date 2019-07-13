@@ -23,7 +23,7 @@ function play(connection, message) {
     server.dispatcher.on("end", function() { 
       if (server.queue[0]) play(connection, message);
   
-      else connection.disconnect();
+      else connection.connect();
   
     });
   }
